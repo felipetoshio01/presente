@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes levitate {
+    0%, 100% {
+        transform: translateY(-10px);
+
+    } 50% {
+        transform: translateY(10px);
+    }  
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font: 'Open Sans', Arial, sans-serif;
+
+    --bg-color-off: var(--black);
+    --font-color-off: var(--white);
+    --line-color-off: rgb(200, 200, 200);
+    --white: rgb(230, 230, 230);
+    --black: rgb(37, 37, 37);
+
+    --dark-gray: rgb(152, 152, 152);
+}
+
+body {
+    background-color: var(--bg-color-off);
+    color: var(--font-color-off);
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
+
+    font-family: var(--main-font);
+}
+
+header {
+    text-align: center;
+    padding: 1.5em;
+    font-weight: normal;
+    position: relative;
+}
+
+main {
+    padding: 1em;
+}
+
+#finalSecret {
+    margin: 2em auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--white);
+    background-image: radial-gradient(circle at 30% 30%, var(--white), var(--bg-color-off));
+
+    border-radius: 50%;
+
+    aspect-ratio: 1 / 1;
+    width: clamp(7em, 60%, 17em);
+    animation: levitate 5s ease-in-out infinite;
+;
+    position: relative;
+
+    transform-style: preserve-3d;
+    cursor: pointer;
+}   
+
+#finalSecret::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    
+    transform: translateZ(-1px);
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+    padding: 0.2em;
+    translate: -50% -50%;
+
+    filter: blur(1em);
+    opacity: 0.3;
+}
+
+#finalSecretTitle {
+    text-shadow: 2px 2px 4px var(--black);
+}
+
+header::after {
+    content: '';
+    position: absolute;
+
+    width: 95%;
+    height: 0.1em;
+
+    left: 50%;
+    bottom: 0;
+    translate: -50%;
+
+    background-color: var(--line-color-off);
+
+
+}
+
+footer {
+    padding: 1em;
+    text-align: center;
+}
