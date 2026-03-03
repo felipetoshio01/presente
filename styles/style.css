@@ -2,12 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-@property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
+/* ================ KEYFRAMES ================ */
 
+/* Levitação: objeto sobe e desce */
 @keyframes levitate {
     0%, 100% {
         transform: translateY(-10px);
@@ -17,7 +14,26 @@
     }  
 }
 
+/* Screen Shake: faz a leta tremer */
+@keyframes screenShake {
+    0%, 100% {
+        transform: rotate(0deg);
+        background-color: var(--bg-color-off);
+    }
 
+    33% {
+        transform: rotate(5deg);
+        background-color: var(--dark-gray1);
+    }
+
+   66% {
+        transform: rotate(-5deg);
+        
+    }
+}
+
+
+/* ================ GLOBAIS ================ */
 * {
     margin: 0;
     padding: 0;
@@ -25,15 +41,21 @@
 }
 
 :root {
+    /* ================ FONTES ================ */
     --main-font: 'Open Sans', Arial, sans-serif;
 
+    /* ================ PALETA ================ */
     --bg-color-off: var(--black);
     --font-color-off: var(--white);
     --line-color-off: rgb(200, 200, 200);
     --white: rgb(230, 230, 230);
     --black: rgb(37, 37, 37);
 
-    --dark-gray: rgb(152, 152, 152);
+    --dark-gray1: rgb(70, 70, 70);
+    --dark-gray2: rgb(50, 50, 50);
+
+    /* ================ ANIMAÇÕES ================ */
+    --levitate-anim: levitate 5s ease-in-out infinite;
 }
 
 body {
@@ -48,6 +70,13 @@ body {
     font-family: var(--main-font);
 }
 
+/* ANIMAÇÃO: shake do body */
+body.shake {
+    animation: screenShake 0.2s linear;
+}
+
+
+/* ================ HEADER ================ */
 header {
     text-align: center;
     padding: 1.5em;
@@ -55,12 +84,29 @@ header {
     position: relative;
 }
 
+header::after {
+    content: '';
+    position: absolute;
+
+    width: 95%;
+    height: 0.1em;
+
+    left: 50%;
+    bottom: 0;
+    translate: -50%;
+
+    background-color: var(--line-color-off);
+}
+
+
+/* ================ MAIN ================ */
 main {
     padding: 1em;
 }
 
+/* Orbe do segredo */
 #finalSecret {
-    margin: 2em auto;
+    margin: 4em auto;
 
     display: flex;
     justify-content: center;
@@ -73,12 +119,16 @@ main {
 
     aspect-ratio: 1 / 1;
     width: clamp(7em, 60%, 17em);
-    animation: levitate 5s ease-in-out infinite;
-;
+    animation: var(--levitate-anim);
+
     position: relative;
 
     transform-style: preserve-3d;
     cursor: pointer;
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;   
+    user-select: none;
 }   
 
 #finalSecret::after {
@@ -100,26 +150,40 @@ main {
     opacity: 0.3;
 }
 
+/* Título dentro da orbe */
 #finalSecretTitle {
     text-shadow: 2px 2px 4px var(--black);
 }
 
-header::after {
-    content: '';
-    position: absolute;
+/* Texto que fica aparecendo */
+#secretDialog {
+    transition: opacity 2s ease-in-out;
+    text-align: center;
+    margin-bottom: 5em;
+    font-size: 1em;
 
-    width: 95%;
-    height: 0.1em;
-
-    left: 50%;
-    bottom: 0;
-    translate: -50%;
-
-    background-color: var(--line-color-off);
-
-
+    animation: var(--levitate-anim);
 }
 
+/* ANIMAÇÃO: fade-in / fade-out do texto */
+#secretDialog.fadeOut {
+    opacity: 0;
+}
+
+/* Textos de memória */
+.memory h2 {
+    margin-bottom: 1em;
+    color: var(--dark-gray1);
+}
+
+.memory p {
+    line-height: 1.5em;
+    margin-bottom: 0.75em;
+    color: var(--dark-gray2);
+}
+
+
+/* ================ FOOTER ================ */
 footer {
     padding: 1em;
     text-align: center;
