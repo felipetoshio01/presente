@@ -44,20 +44,49 @@
     /* ================ FONTES ================ */
     --main-font: 'Open Sans', Arial, sans-serif;
 
+
     /* ================ PALETA ================ */
+    --white: #e6e6e6;
+    --black: #252525;
+    --dark-gray1: #464646;
+    --dark-gray2: #323232;
+
+    --transparent: #3434341a;
+    --transparent-purple: #8869f04b;
+
+    --primary-color: #8969F0;
+    --secondary-color: #5D48A3;
+    --tertiary-color: #3F3264;
+
     --bg-color-off: var(--black);
     --font-color-off: var(--white);
-    --line-color-off: rgb(200, 200, 200);
-    --white: rgb(230, 230, 230);
-    --black: rgb(37, 37, 37);
+    --line-color-off: #c8c8c8;
 
-    --dark-gray1: rgb(70, 70, 70);
-    --dark-gray2: rgb(50, 50, 50);
+
+    /* ================ SOMBRAS ================ */
+
+    /* Sombra do texto dentro do orbe */
+    --orb-text-shadow: 2px 2px 4px var(--black);
+
+    /* Sombra do texto dos diálogos do secret */
+    --dialog-text-shadow: 0px 0px 6px var(--white);
+
+    /* Sombra da área dos textos transparentes*/
+    --transparent-shadow: 4px 4px 8px var(--transparent), -4px -4px 8px var(--transparent);
+
+    /* Sombra da área das memórias ativas */
+    --purple-shadow: inset 0px 4px 10px var(--transparent-purple), inset 0px -4px 10px var(--transparent-purple);
+
+    /* Sombra dos textos das memórias */
+    --memory-text-shadow: 0px 0px 4px var(--primary-color);
+
 
     /* ================ ANIMAÇÕES ================ */
     --levitate-anim: levitate 5s ease-in-out infinite;
 }
 
+
+/* ============ BODY ============ */
 body {
     background-color: var(--bg-color-off);
     color: var(--font-color-off);
@@ -74,6 +103,7 @@ body {
 body.shake {
     animation: screenShake 0.2s linear;
 }
+
 
 
 /* ================ HEADER ================ */
@@ -99,10 +129,11 @@ header::after {
 }
 
 
+
 /* ================ MAIN ================ */
-main {
-    padding: 1em;
-}
+
+
+/* ============ SEGREDO ============ */
 
 /* Orbe do segredo */
 #finalSecret {
@@ -152,16 +183,15 @@ main {
 
 /* Título dentro da orbe */
 #finalSecretTitle {
-    text-shadow: 2px 2px 4px var(--black);
+    text-shadow: var(--orb-text-shadow);
 }
 
 /* Texto que fica aparecendo */
 #secretDialog {
-    transition: opacity 2s ease-in-out;
+    text-shadow: var(--dialog-text-shadow);
     text-align: center;
-    margin-bottom: 5em;
     font-size: 1em;
-
+    transition: opacity 2s ease-in-out;
     animation: var(--levitate-anim);
 }
 
@@ -170,17 +200,71 @@ main {
     opacity: 0;
 }
 
-/* Textos de memória */
-.memory h2 {
-    margin-bottom: 1em;
-    color: var(--dark-gray1);
+/* Container geral */
+#finalSecretWrapper {
+    margin: 12em 0;
 }
 
-.memory p {
+
+/* ============ MEMÓRIAS ============ */
+
+/* Container das memórias */
+.memory {
+    padding:clamp(1em, 5%, 7em);
+}
+
+/* MEMORY: quando ativo */
+.memory.activeMemory {
+    background: var(--black) url(../images/stars.jpg) right center no-repeat fixed;
+    background-size: cover;
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: var(--purple-shadow);
+}
+
+/* Título da memória */
+.memoryTitle {
+    width: max-content;
+    margin-bottom: 1em;
+    padding: 0.25em;
+    border-radius: 1em;
+    color: var(--dark-gray1);
+    font-size: 2.5em;
+}
+
+/* TÍTULO MEMORY: quando ativo */
+.memoryTitle.activeMemoryTitle {
+    color: var(--white);
+    text-shadow: var(--memory-text-shadow);
+}
+
+/* Container dos textos das memórias */
+.memoryText {
+    width: clamp(15em, 100%, 40em);
+    padding: 1em;
+    border-radius: 1em;
+}
+
+/* Texto em si */
+.memoryText p {
     line-height: 1.5em;
     margin-bottom: 0.75em;
     color: var(--dark-gray2);
 }
+
+/* CONTAINER TEXTO: quando ativo */
+.memoryText.activeMemoryText {
+    background-color: rgba(52, 52, 52, 0.1);
+    backdrop-filter: blur(0.2em);
+    box-shadow: var(--transparent-shadow);
+}
+
+/* TEXTO MEMORY: quando ativo */
+.memoryText.activeMemoryText p{
+    color: var(--white);
+    text-shadow: var(--memory-text-shadow);
+}
+
 
 
 /* ================ FOOTER ================ */

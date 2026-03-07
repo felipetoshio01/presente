@@ -9,10 +9,10 @@ const dialogs = [
     "Branco, tudo branco...",
     "Me ajude, quero lembrar...",
     "Tenho que lembrar, tenho...",
-    "Tinha alguém...",
+    "Tinha alguém, memória...",
     "Aquele dia...",
     "Quero ver de novo...",
-    "Por favor...",
+    "Por favor, lembrar...",
     "Onde, onde que foi?",
     "Cadê você?"
 ]
