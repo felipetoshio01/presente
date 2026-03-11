@@ -1,9 +1,17 @@
 // ================= IMPORTS =================
 import Random from "./random.js";
 
-const finalSecret = document.getElementById("finalSecret");
-const secretDialog = document.getElementById("secretDialog");
+// ================= ELEMENTOS =================
+const finalSecret = document.getElementById("finalSecret");  // Orbe final
+const secretDialog = document.getElementById("secretDialog");  // Diálogos rotacionando
 
+// TODO: faça um event delegation AQUI
+const memoryBtn1 = document.getElementById("memoryBtn1");
+const memory1 = document.getElementById("memory1")
+
+// ================= VARIÁVEIS =================
+
+// Diálogos que serão rotacionados
 const dialogs = [
     "Eu preciso lembrar...",
     "Branco, tudo branco...",
@@ -16,6 +24,7 @@ const dialogs = [
     "Onde, onde que foi?",
     "Cadê você?"
 ]
+
 
 // Função com o screen shake do segredo
 finalSecret.addEventListener("click", () => {
@@ -35,6 +44,11 @@ setInterval(() => {
 
 }, 7000);
 
+memoryBtn1.addEventListener("click", () => {
+    memory1.classList.add("activeMemory");
+    memoryBtn1.remove();
+})
+
 // Adiciona a animação de recusa do click
 function handleScreenShake() {
     document.body.classList.add("shake");
@@ -44,5 +58,3 @@ function handleScreenShake() {
 
     })
 }
-
-

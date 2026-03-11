@@ -132,6 +132,9 @@ header::after {
 
 /* ================ MAIN ================ */
 
+button {
+    cursor: pointer;
+}
 
 /* ============ SEGREDO ============ */
 
@@ -210,7 +213,11 @@ header::after {
 
 /* Container das memórias */
 .memory {
-    padding:clamp(1em, 5%, 7em);
+    display: grid;
+    padding: clamp(1em, 5%, 7em);
+    grid-template-rows: 1fr;
+    grid-template-areas: "stack";
+    place-items: center;
 }
 
 /* MEMORY: quando ativo */
@@ -233,7 +240,7 @@ header::after {
 }
 
 /* TÍTULO MEMORY: quando ativo */
-.memoryTitle.activeMemoryTitle {
+.memory.activeMemory .memoryTitle {
     color: var(--white);
     text-shadow: var(--memory-text-shadow);
 }
@@ -253,18 +260,36 @@ header::after {
 }
 
 /* CONTAINER TEXTO: quando ativo */
-.memoryText.activeMemoryText {
+.memory.activeMemory .memoryText {
     background-color: rgba(52, 52, 52, 0.1);
     backdrop-filter: blur(0.2em);
     box-shadow: var(--transparent-shadow);
 }
 
 /* TEXTO MEMORY: quando ativo */
-.memoryText.activeMemoryText p{
+.memory.activeMemory .memoryText p{
     color: var(--white);
     text-shadow: var(--memory-text-shadow);
 }
 
+.rememberArea {
+    display: grid;
+    place-items: center;
+}
+
+.memoryContent {
+    grid-area: stack;
+}
+
+.memoryBtn {
+    grid-area: stack;
+
+    padding: 0.5em;
+    border-radius: 5em;
+
+    width: 200px;
+    height: 100px;
+}
 
 
 /* ================ FOOTER ================ */
