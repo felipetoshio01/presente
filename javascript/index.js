@@ -5,9 +5,7 @@ import Random from "./random.js";
 const finalSecret = document.getElementById("finalSecret");  // Orbe final
 const secretDialog = document.getElementById("secretDialog");  // Diálogos rotacionando
 
-// TODO: faça um event delegation AQUI
-const memoryBtn1 = document.getElementById("memoryBtn1");
-const memory1 = document.getElementById("memory1")
+const memoryArea = document.getElementById("memoryArea");  // Local onde estão as memórias
 
 // ================= VARIÁVEIS =================
 
@@ -35,8 +33,10 @@ finalSecret.addEventListener("click", () => {
 // Looping da mensagem abaixo do finalSecret
 setInterval(() => {
 
+    // Ativa a animação
     secretDialog.classList.add("fadeOut");
 
+    // Após 2 segundos (animação termina)
     setTimeout( () => {
         secretDialog.classList.remove("fadeOut");
         secretDialog.textContent = Random.choose(...dialogs);
@@ -44,9 +44,31 @@ setInterval(() => {
 
 }, 7000);
 
-memoryBtn1.addEventListener("click", () => {
-    memory1.classList.add("activeMemory");
-    memoryBtn1.remove();
+
+// Ativação das memórias
+memoryArea.addEventListener("click", event => {
+
+    // Retorna se não for o botão
+    if (!event.target.matches(".memoryBtn")) return;
+
+    // Captura a instância da memória do botão
+    let memory = event.target.parentElement;
+
+    // Retira o botão
+    event.target.remove();
+
+    // Inicia a animação
+    memory.classList.add("activating");
+
+    // Após 4 segundos (animação termina)
+    setTimeout( () => {
+        memory.classList.remove("activating");
+
+        // Ativa a memória
+        memory.classList.add("activeMemory");
+    }, 4000);
+
+    
 })
 
 // Adiciona a animação de recusa do click
