@@ -57,7 +57,7 @@
     }
 
     to {
-        width: 150vw;
+        width: 120vw;
     }
 }
 
@@ -189,7 +189,7 @@ header::after {
 
     z-index: 10;
 
-    width: 150vw;
+    width: 120vw;
 
     aspect-ratio: 1 / 1;
     animation: var(--blur-grow-anim);
