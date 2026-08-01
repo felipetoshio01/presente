@@ -57,21 +57,19 @@ memoryArea.addEventListener("click", event => {
     // Retira o botão
     event.target.remove();
 
-    // Inicia a animação
-    memory.classList.add("activating");
+    blurScreen()
+
 
     // Após 4 segundos (animação termina)
     setTimeout( () => {
-        memory.classList.remove("activating");
-
         // Ativa a memória
         memory.classList.add("activeMemory");
-    }, 4000);
+    }, 5000);
 
-    
+
 })
 
-// Adiciona a animação de recusa do click
+// Faz o screen shake
 function handleScreenShake() {
     document.body.classList.add("shake");
 
@@ -80,3 +78,19 @@ function handleScreenShake() {
 
     })
 }
+
+function blurScreen() {
+    const blurDiv = document.createElement("div");
+    blurDiv.id = "screenBlur";
+
+    document.body.append(blurDiv);
+
+    blurDiv.addEventListener("animationend", () => {
+        blurDiv.classList.add("fadeOut");
+
+        setTimeout(() => {
+            blurDiv.remove()
+        }, 4000);
+    });
+    
+} 
