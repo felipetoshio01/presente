@@ -1,0 +1,68 @@
+/* ============ ORBE DO SEGREDO ============ */
+
+/* Container geral */
+#finalSecretWrapper {
+    margin: 12em 0;
+}
+
+/* O orbe em si */
+#finalSecret {
+    margin: 4em auto;
+
+    /* Centralizar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Fundo com gradiente (parecer uma esfera) */
+    background-color: var(--white);
+    background-image: radial-gradient(circle at 30% 30%, var(--white), var(--bg-color-off));
+
+    /* Para tornar um círculo */
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: clamp(7em, 60%, 17em);
+
+    /* Animação de levitar (cima/baixo) */
+    animation: var(--levitate-anim-secret);
+
+    /* Configurações para o ::after */
+    position: relative;
+    transform-style: preserve-3d;
+
+    cursor: pointer;
+
+    /* Desativar o "selecionar texto" com o mouse */
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;   
+    user-select: none;
+}   
+
+/* Efeito de glow atrás da esfera */
+#finalSecret::after {
+    content: '';
+    position: absolute;
+
+    /* Deixando ela exatamente anteposta ao orbe */
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transform: translateZ(-1px);
+
+    /* "Borda" com o padding */
+    border-radius: 50%;
+    padding: 0.2em;
+
+    /* Cor do brilho e configurações de intensidade */
+    background-color: var(--white);
+    filter: blur(1em);
+    opacity: 0.3;
+}
+
+/* Título dentro da orbe */
+#finalSecretTitle {
+    text-shadow: var(--orb-text-shadow);
+}

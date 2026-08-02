@@ -1,0 +1,99 @@
+/* ============ BOTÕES ATIVADORES ============ */
+
+/* ---------- Estrutura ----------
+
+"*" = está nesse arquivo
+
+.memory (memory.css)
+|
+->.memoryContent (memory.css)
+| | 
+| ->.memoryTite (memory.css)
+| | 
+| ->.memoryText (memory.css)
+|
+->.memoryBtn*
+*/
+
+button {
+    cursor: pointer;
+}
+
+.memoryBtn {
+    /* Entrar no stack com o .memoryContent */
+    grid-area: stack;
+
+    background-color: var(--dark-gray1);
+
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--dark-gray2);
+
+    border: none;
+    padding: 0.5em;
+    border-radius: 5em;
+    box-shadow: var(--button-shadow);
+
+    width: 200px;
+    height: 100px;
+
+    /* Levitação */
+    animation: var(--levitate-anim-button);
+    transition: 0.3s ease-in-out;
+
+    /* Preparar o ::afeter e ::before */
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+/* Definição do after e before */
+.memoryBtn::after, .memoryBtn::before {
+    content: '';
+    position: absolute;
+    
+    /* Ser 100% atrás do botão */
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transform: translateZ(-1px);
+
+    /* Para ter efeito de girar na borda */
+    background-image: conic-gradient(
+        from var(--angle),
+        var(--primary-color),
+        var(--white),
+        var(--primary-color),
+        var(--white),
+        var(--primary-color)
+    );
+    padding: 0.1em;
+
+    /* Mesmo border-radius do boão */
+    border-radius: inherit;
+
+    /* Inicialmente invisível */
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+
+    /* Ativar o spin */
+    animation: var(--border-spin-anim);
+}
+
+/* Hover do botão, iluminando ele */
+.memoryBtn:hover {
+    background-color: var(--tertiary-color);
+    color: var(--white);
+}
+
+/* Fazer o spin ser visível no hover */
+.memoryBtn:hover::after, .memoryBtn:hover::before {
+    opacity: 1;
+}
+
+/* Blur de luz atrás */
+.memoryBtn:hover::before {
+    opacity: 0.5;
+    filter: blur(1em);
+}

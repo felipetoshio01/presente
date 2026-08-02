@@ -1,0 +1,18 @@
+/* ============ TEXTOS DO ORBE ============ */
+
+#secretDialog {
+    text-shadow: var(--dialog-text-shadow);
+    text-align: center;
+    font-size: 1em;
+
+    /* Para fazer o efeito de fade out */
+    transition: opacity 2s ease-in-out;
+
+    /* Levitação */
+    animation: var(--levitate-anim-secret);
+}
+
+/* ANIMAÇÃO: fade-in / fade-out do texto */
+#secretDialog.fadeOut {
+    opacity: 0;
+}

@@ -1,0 +1,13 @@
+/* Importa tudo que está dentro do main */
+
+/* ============ IMPORTS ============ */
+
+/* Orbe */
+@import url("./secret-orb/orb.css");
+@import url("./secret-orb/dialogs.css");
+
+/* Memórias */
+@import url("./memories/memory.css");
+@import url("./memories/active-memory.css");
+@import url("./memories/memory-btn.css");
+@import url("./memories/blur.css");

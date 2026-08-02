@@ -1,0 +1,53 @@
+/* ============ MEMÓRIAS ATIVAS ============ */
+
+/* ---------- Estrutura ----------
+
+"*" = está nesse arquivo
+
+.memory*
+|
+->.memoryContent*
+| | 
+| ->.memoryTite*
+| | 
+| ->.memoryText*
+|
+->.memoryBtn
+
+---------- =-= ---------- */
+
+/* MEMORY: quando ativo */
+.memory.activeMemory {
+    /* Imagem de fundo */
+    background: var(--black) url(../../../images/stars.jpg) right center no-repeat fixed;
+    background-size: cover;
+
+    box-shadow: var(--purple-shadow);
+
+    /* Configuração do ::after e ::before */
+    position: relative;
+    transform-style: preserve-3d;
+    
+}
+
+/* TÍTULO MEMORY: quando ativo */
+.memory.activeMemory .memoryTitle {
+    /* Fica visível */
+    color: var(--white);
+    text-shadow: var(--memory-text-shadow);
+}
+
+/* CONTAINER TEXTO: quando ativo */
+.memory.activeMemory .memoryText {
+    /* Facilitar ler os textos brancos */
+    background-color: rgba(52, 52, 52, 0.1);
+    backdrop-filter: blur(0.2em);
+    box-shadow: var(--transparent-shadow);
+}
+
+/* TEXTO MEMORY: quando ativo */
+.memory.activeMemory .memoryText p{
+    /* Fica visível */
+    color: var(--white);
+    text-shadow: var(--memory-text-shadow);
+}

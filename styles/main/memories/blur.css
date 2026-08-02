@@ -1,0 +1,36 @@
+/* ============ BLUR DE ATIVAÇÃO DA MEMÓRIA ============ */
+
+#screenBlur {
+    /* Fixo na tela */
+    position: fixed;
+
+    /* Centralizado */
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+
+    /* Ser circular */
+    border-radius: 50%;
+
+    /* Deixar menos sólido */
+    filter: blur(2em);
+    aspect-ratio: 1 / 1;
+
+    /* Cobrir toda tela toda*/
+    width: 120vw;
+
+    background-color: var(--white);
+
+    /* Em cima de tudo */
+    z-index: 10;
+    
+    /* Animação para crescer */
+    animation: var(--blur-grow-anim);
+
+    /* Efeito de fade out */
+    transition: opacity 4s ease-in-out;
+}
+
+#screenBlur.fadeOut {
+    opacity: 0;
+}

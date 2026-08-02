@@ -1,0 +1,116 @@
+/* ================ KEYFRAMES ================ */
+
+/* Levitação: objeto sobe e desce */
+@keyframes levitate {
+    0% {
+        transform: translateY(-10px);
+
+    } 100% {
+        transform: translateY(10px);
+    }  
+}
+
+/* Screen Shake: faz a leta tremer */
+@keyframes screenShake {
+    0%, 100% {
+        transform: rotate(0deg);
+        background-color: var(--bg-color-off);
+    }
+
+    33% {
+        transform: rotate(5deg);
+        background-color: var(--dark-gray1);
+    }
+
+   66% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* Rotação de borda */
+@keyframes borderSpin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* Animação do blur crescendo */
+@keyframes growBlur {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 120vw;
+    }
+}
+
+/* ================ PROPERTIES ================ */
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+:root {
+    /* ================ FONTES ================ */
+    --main-font: 'Open Sans', Arial, sans-serif;
+
+
+    /* ================ PALETA ================ */
+    --white: #e6e6e6;
+    --black: #252525;
+    --dark-gray1: #464646;
+    --dark-gray2: #323232;
+
+    --transparent: #3434341a;
+    --transparent-purple: #8869f04b;
+
+    --primary-color: #8969F0;
+    --secondary-color: #5D48A3;
+    --tertiary-color: #3F3264;
+
+    --bg-color-off: var(--black);
+    --font-color-off: var(--white);
+    --line-color-off: #c8c8c8;
+
+
+    /* ================ SOMBRAS ================ */
+
+    /* Sombra do texto dentro do orbe */
+    --orb-text-shadow: 2px 2px 4px var(--black);
+
+    /* Sombra do texto dos diálogos do secret */
+    --dialog-text-shadow: 0px 0px 6px var(--white);
+
+    /* Sombra da área dos textos transparentes*/
+    --transparent-shadow: 4px 4px 8px var(--transparent), -4px -4px 8px var(--transparent);
+
+    /* Sombra da área das memórias ativas */
+    --purple-shadow: inset 0px 4px 10px var(--transparent-purple), inset 0px -4px 10px var(--transparent-purple);
+
+    /* Sombra dos textos das memórias */
+    --memory-text-shadow: 0px 0px 4px var(--primary-color);
+
+    /* Sombra dos botões */
+    --button-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+
+
+    /* ================ ANIMAÇÕES ================ */
+    
+    /* Controla a animação do orbe do segredo e seu diálogo */
+    --levitate-anim-secret: levitate 3s ease-in-out infinite alternate;
+
+    /* Controla a animação dos botões de lembrança */
+    --levitate-anim-button: levitate 1.5s ease-in-out infinite alternate;
+
+    /* Controla o giro da borda nos botões (gradiente) */
+    --border-spin-anim: borderSpin 3s linear infinite;
+
+    /* Controla o crescimento do blur */
+    --blur-grow-anim: growBlur 5s ease-in-out;
+}

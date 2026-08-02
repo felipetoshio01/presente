@@ -1,0 +1,64 @@
+/* ============ MEMÓRIAS ============ */
+
+/* ---------- Estrutura ----------
+
+"*" = está nesse arquivo
+
+.memory*
+|
+->.memoryContent*
+| | 
+| ->.memoryTitle*
+| | 
+| ->.memoryText*
+|
+->.memoryBtn (memory-btn.css)
+*/
+
+
+/* Container das memórias */
+.memory {
+    
+    /* Grid para fazer um "stack" com o texto e o botão */
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-areas: "stack";
+
+    padding: clamp(1em, 5%, 7em);
+    
+    /* Centralizar e possibilitar posicionar */
+    place-items: center;
+    position: relative;
+}
+
+/* Local onde o texto fica */
+.memoryContent {
+    grid-area: stack;
+}
+
+/* Título da memória */
+.memoryTitle {
+    /* Ocupar o máximo que pode */
+    width: max-content;
+
+    margin-bottom: clamp(0.25em, 2%, 1em);
+    padding: 0.25em;
+    border-radius: 1em;
+
+    color: var(--dark-gray1);
+    font-size: 2.5em;
+}
+
+/* Container dos textos das memórias */
+.memoryText {
+    width: clamp(15em, 100%, 40em);
+    padding: 1em;
+    border-radius: 1em;
+}
+
+/* Texto em si */
+.memoryText p {
+    line-height: 1.5em;
+    margin-bottom: 0.75em;
+    color: var(--dark-gray2);
+}
