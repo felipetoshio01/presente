@@ -18,17 +18,14 @@
 
 /* MEMORY: quando ativo */
 .memory.activeMemory {
-    /* Imagem de fundo */
-    background: var(--black) url(../../../images/stars.jpg) right center no-repeat fixed;
-    background-size: cover;
-
-    box-shadow: var(--purple-shadow);
+    box-shadow: var(--memory-shadow);
 
     /* Configuração do ::after e ::before */
     position: relative;
     transform-style: preserve-3d;
-    
 }
+
+
 
 /* TÍTULO MEMORY: quando ativo */
 .memory.activeMemory .memoryTitle {
@@ -40,14 +37,43 @@
 /* CONTAINER TEXTO: quando ativo */
 .memory.activeMemory .memoryText {
     /* Facilitar ler os textos brancos */
-    background-color: rgba(52, 52, 52, 0.1);
+    background-color: rgba(52, 52, 52, 0.4);
     backdrop-filter: blur(0.2em);
     box-shadow: var(--transparent-shadow);
 }
 
 /* TEXTO MEMORY: quando ativo */
-.memory.activeMemory .memoryText p{
+.memory.activeMemory .memoryText p {
     /* Fica visível */
     color: var(--white);
+    text-shadow: var(--memory-text-shadow);
+}
+
+
+/* ============ MEMÓRIAS ATIVAS ESPECIFICAS ============ */
+
+/* ------ Estela ------ */
+.memory.activeMemory#star-memory {
+    /* Imagem de fundo */
+    background: var(--black) url(../../../images/stars.jpg) right top no-repeat fixed;
+    background-size: cover;
+}
+
+/* ------ Sol ------ */
+.memory.activeMemory#sun-memory {
+    /* Imagem de fundo */
+    background: var(--black) url(../../../images/sunset.jpg) right bottom no-repeat fixed;
+    background-size: cover;
+}
+
+/* ------ Campo ------ */
+.memory.activeMemory#field-memory {
+    /* Imagem de fundo */
+    background: var(--black) url(../../../images/field.jpg) right bottom no-repeat fixed;
+    background-size: cover;
+}
+
+.memory.activeMemory#field-memory .memoryTitle {
+    /* Sombra para deixar mais visível */
     text-shadow: var(--memory-text-shadow);
 }

@@ -70,9 +70,14 @@
     --transparent: #3434341a;
     --transparent-purple: #8869f04b;
 
-    --primary-color: #8969F0;
-    --secondary-color: #5D48A3;
-    --tertiary-color: #3F3264;
+    --star-primary-color: #8969F0;
+    --star-secondary-color: #3F3264;
+
+    --sun-primary-color: #ff8800;
+    --sun-secondary-color: #a12a15;
+
+    --field-primary-color: #93df19;
+    --field-secondary-color: #0e7e17;
 
     --bg-color-off: var(--black);
     --font-color-off: var(--white);
@@ -91,10 +96,10 @@
     --transparent-shadow: 4px 4px 8px var(--transparent), -4px -4px 8px var(--transparent);
 
     /* Sombra da área das memórias ativas */
-    --purple-shadow: inset 0px 4px 10px var(--transparent-purple), inset 0px -4px 10px var(--transparent-purple);
+    --memory-shadow: inset 0px 6px 10px rgba(0, 0, 0, 0.7), inset 0px -6px 10px rgba(0, 0, 0, 0.7);
 
     /* Sombra dos textos das memórias */
-    --memory-text-shadow: 0px 0px 4px var(--primary-color);
+    --memory-text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
 
     /* Sombra dos botões */
     --button-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);

@@ -1,11 +1,16 @@
 // ================= ELEMENTOS =================
 const memoryArea = document.getElementById("memoryArea");  // Local onde estão as memórias
 
+let isActivating = false;
+
 // Ativação das memórias
 memoryArea.addEventListener("click", event => {
 
     // Retorna se não for o botão
     if (!event.target.matches(".memoryBtn")) return;
+
+    // Se já está ativando uma memória, bloqueie
+    if (isActivating) return;
 
     // Captura a instância da memória do botão
     let memory = event.target.parentElement;
@@ -13,6 +18,8 @@ memoryArea.addEventListener("click", event => {
     // Retira o botão
     event.target.remove();
 
+    isActivating = true;
+    
     // Aplica o blur
     blurScreen();
 
@@ -20,8 +27,8 @@ memoryArea.addEventListener("click", event => {
     setTimeout( () => {
         // Ativa a memória
         memory.classList.add("activeMemory");
-    }, 5000);
-
+        isActivating = false;
+    }, 4000);
 
 })
 
@@ -41,5 +48,4 @@ function blurScreen() {
             blurDiv.remove()
         }, 4000);
     });
-    
 } 

@@ -24,7 +24,9 @@
     grid-template-rows: 1fr;
     grid-template-areas: "stack";
 
-    padding: clamp(1em, 5%, 7em);
+    padding: 10em clamp(1em, 5%, 7em);
+
+    margin: 12em 0;
     
     /* Centralizar e possibilitar posicionar */
     place-items: center;
@@ -34,6 +36,17 @@
 /* Local onde o texto fica */
 .memoryContent {
     grid-area: stack;
+    display: flex;
+    flex-direction: column;
+}
+/* Fica intercalando esquerda / direita */
+.memory:nth-child(2n) .memoryContent {
+    align-items: end;
+}
+
+/* Fica intercalando o alinhamento do texto */
+.memory:nth-child(2n) .memoryText {
+    text-align: right;
 }
 
 /* Título da memória */

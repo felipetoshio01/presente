@@ -13,6 +13,5 @@ function handleScreenShake() {
 
     document.body.addEventListener("animationend", () => {
         document.body.classList.remove("shake");
-
     });
 }

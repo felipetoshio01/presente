@@ -59,15 +59,6 @@ button {
     translate: -50% -50%;
     transform: translateZ(-1px);
 
-    /* Para ter efeito de girar na borda */
-    background-image: conic-gradient(
-        from var(--angle),
-        var(--primary-color),
-        var(--white),
-        var(--primary-color),
-        var(--white),
-        var(--primary-color)
-    );
     padding: 0.1em;
 
     /* Mesmo border-radius do boão */
@@ -83,7 +74,6 @@ button {
 
 /* Hover do botão, iluminando ele */
 .memoryBtn:hover {
-    background-color: var(--tertiary-color);
     color: var(--white);
 }
 
@@ -96,4 +86,60 @@ button {
 .memoryBtn:hover::before {
     opacity: 0.5;
     filter: blur(1em);
+}
+
+
+/* ============ BOTÕES ATIVADORES ESPECIFICOS ============ */
+
+/* ------ Estrela ------ */
+#star-memory .memoryBtn::after, #star-memory .memoryBtn::before {
+    /* Para ter efeito de girar na borda */
+    background-image: conic-gradient(
+        from var(--angle),
+        var(--star-primary-color),
+        var(--white),
+        var(--star-primary-color),
+        var(--white),
+        var(--star-primary-color)
+    );
+}
+
+#star-memory .memoryBtn:hover {
+    background-color: var(--star-secondary-color);
+}
+
+
+/* ------ Sol ------ */
+#sun-memory .memoryBtn::after, #sun-memory .memoryBtn::before {
+    /* Para ter efeito de girar na borda */
+    background-image: conic-gradient(
+        from var(--angle),
+        var(--sun-primary-color),
+        var(--white),
+        var(--sun-primary-color),
+        var(--white),
+        var(--sun-primary-color)
+    );
+}
+
+#sun-memory .memoryBtn:hover {
+    background-color: var(--sun-secondary-color);
+}
+
+
+/* ------ Campo ------ */
+#field-memory .memoryBtn::after, #field-memory .memoryBtn::before {
+    /* Para ter efeito de girar na borda */
+    background-image: conic-gradient(
+        from var(--angle),
+        var(--field-primary-color),
+        var(--white),
+        var(--field-primary-color),
+        var(--white),
+        var(--field-primary-color)
+    );
+}
+
+#field-memory .memoryBtn:hover {
+    background-color: var(--field-secondary-color);
 }
