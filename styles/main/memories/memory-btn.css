@@ -143,3 +143,38 @@ button {
 #field-memory .memoryBtn:hover {
     background-color: var(--field-secondary-color);
 }
+
+
+/* ------ Dourado ------ */
+#golden-memory .memoryBtn::after, #golden-memory .memoryBtn::before {
+    /* Para ter efeito de girar na borda */
+    background-image: conic-gradient(
+        from var(--angle),
+        var(--golden-primary-color),
+        var(--white),
+        var(--golden-primary-color),
+        var(--white),
+        var(--golden-primary-color)
+    );
+}
+
+#golden-memory .memoryBtn:hover {
+    background-color: var(--golden-secondary-color);
+}
+
+/* ------ Mar ------ */
+#sea-memory .memoryBtn::after, #sea-memory .memoryBtn::before {
+    /* Para ter efeito de girar na borda */
+    background-image: conic-gradient(
+        from var(--angle),
+        var(--sea-primary-color),
+        var(--white),
+        var(--sea-primary-color),
+        var(--white),
+        var(--sea-primary-color)
+    );
+}
+
+#sea-memory .memoryBtn:hover {
+    background-color: var(--sea-secondary-color);
+}

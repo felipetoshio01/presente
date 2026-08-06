@@ -55,14 +55,14 @@
 /* ------ Estela ------ */
 .memory.activeMemory#star-memory {
     /* Imagem de fundo */
-    background: var(--black) url(../../../images/stars.jpg) right top no-repeat fixed;
+    background: var(--black) url(../../../images/stars.jpg) left top no-repeat fixed;
     background-size: cover;
 }
 
 /* ------ Sol ------ */
 .memory.activeMemory#sun-memory {
     /* Imagem de fundo */
-    background: var(--black) url(../../../images/sunset.jpg) right bottom no-repeat fixed;
+    background: var(--black) url(../../../images/sunset.jpg) left bottom no-repeat fixed;
     background-size: cover;
 }
 
@@ -76,4 +76,20 @@
 .memory.activeMemory#field-memory .memoryTitle {
     /* Sombra para deixar mais visível */
     text-shadow: var(--memory-text-shadow);
+}
+
+
+/* ------ Dourado ------ */
+.memory.activeMemory#golden-memory {
+    /* Imagem de fundo */
+    background: var(--black) url(../../../images/golden.jpg) left center no-repeat fixed;
+    background-size: cover;
+}
+
+
+/* ------ Mar ------ */
+.memory.activeMemory#sea-memory {
+    /* Imagem de fundo */
+    background: var(--black) url(../../../images/sea.jpg) center top no-repeat fixed;
+    background-size: cover;
 }

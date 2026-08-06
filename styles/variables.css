@@ -79,6 +79,12 @@
     --field-primary-color: #93df19;
     --field-secondary-color: #0e7e17;
 
+    --golden-primary-color: #f9f557;
+    --golden-secondary-color: #5b412a;
+
+    --sea-primary-color: #ff48e0;
+    --sea-secondary-color: #b31f44;
+
     --bg-color-off: var(--black);
     --font-color-off: var(--white);
     --line-color-off: #c8c8c8;
