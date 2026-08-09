@@ -3,6 +3,12 @@
 /* Container geral */
 #finalSecretWrapper {
     margin: 12em 0;
+    width: clamp(7em, 60%, 17em);
+    
+}
+
+.shake {
+    animation: var(--shake-anim);
 }
 
 /* O orbe em si */
@@ -16,12 +22,12 @@
 
     /* Fundo com gradiente (parecer uma esfera) */
     background-color: var(--white);
-    background-image: radial-gradient(circle at 30% 30%, var(--white), var(--bg-color-off));
+    background-image: radial-gradient(circle at 30% 30%, var(--white), var(--black));
 
     /* Para tornar um círculo */
     border-radius: 50%;
     aspect-ratio: 1 / 1;
-    width: clamp(7em, 60%, 17em);
+    /*width: clamp(7em, 60%, 17em);*/
 
     /* Animação de levitar (cima/baixo) */
     animation: var(--levitate-anim-secret);
@@ -38,6 +44,7 @@
     -ms-user-select: none;   
     user-select: none;
 }   
+
 
 /* Efeito de glow atrás da esfera */
 #finalSecret::after {

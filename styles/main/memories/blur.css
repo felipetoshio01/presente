@@ -16,19 +16,33 @@
     filter: blur(2em);
     aspect-ratio: 1 / 1;
 
-    /* Cobrir toda tela toda*/
-    width: 120vw;
+    
 
     background-color: var(--white);
 
     /* Em cima de tudo */
     z-index: 10;
     
-    /* Animação para crescer */
-    animation: var(--blur-grow-anim);
+    
 
     /* Efeito de fade out */
     transition: opacity 4s ease-in-out;
+}
+
+.wideBlur {
+    /* Cobrir toda tela toda*/
+    width: 150vw;
+
+    /* Animação para crescer */
+    animation: var(--blur-grow-anim-w);
+}
+
+.longBlur {
+    /* Cobrir toda tela toda*/
+    height: 150vh;
+
+    /* Animação para crescer */
+    animation: var(--blur-grow-anim-h);
 }
 
 #screenBlur.fadeOut {

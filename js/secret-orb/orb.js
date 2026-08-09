@@ -1,5 +1,6 @@
 // ================= ELEMENTOS =================
 const finalSecret = document.getElementById("finalSecret");  // Orbe final
+const finalSecretWrapper = document.getElementById("finalSecretWrapper");
 
 // Função com o screen shake do segredo
 finalSecret.addEventListener("click", () => {
@@ -9,9 +10,11 @@ finalSecret.addEventListener("click", () => {
 
 // Faz o screen shake
 function handleScreenShake() {
-    document.body.classList.add("shake");
+    finalSecretWrapper.classList.add("shake");
 
-    document.body.addEventListener("animationend", () => {
-        document.body.classList.remove("shake");
-    });
+    setTimeout( () => {
+        finalSecretWrapper.classList.remove("shake");
+
+    }, 200);
+
 }

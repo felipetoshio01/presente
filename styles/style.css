@@ -32,7 +32,6 @@ body {
     font-family: var(--main-font);
 }
 
-/* ANIMAÇÃO: shake do body */
-.shake {
-    animation: screenShake 0.2s linear;
+.stage1 {
+    background-color: var(--bg-color-1);
 }

@@ -11,19 +11,17 @@
 }
 
 /* Screen Shake: faz a leta tremer */
-@keyframes screenShake {
+@keyframes shake {
     0%, 100% {
-        transform: rotate(0deg);
-        background-color: var(--bg-color-off);
+        transform: translateX(0);
     }
 
     33% {
-        transform: rotate(5deg);
-        background-color: var(--dark-gray1);
+        transform: translateX(10px);
     }
 
-   66% {
-        transform: rotate(-5deg);
+    66% {
+        transform: translateX(-10px);
     }
 }
 
@@ -38,14 +36,25 @@
     }
 }
 
-/* Animação do blur crescendo */
-@keyframes growBlur {
+/* Animação do blur crescendo se width > height */
+@keyframes growBlurW {
     from {
         width: 0;
     }
 
     to {
-        width: 120vw;
+        width: 150vw;
+    }
+}
+
+/* Animação do blur crescendo se width < height */
+@keyframes growBlurH {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 150vh;
     }
 }
 
@@ -116,6 +125,9 @@
     /* Controla a animação do orbe do segredo e seu diálogo */
     --levitate-anim-secret: levitate 3s ease-in-out infinite alternate;
 
+    /* Orbe tremendo cancelando o click */
+    --shake-anim: shake 0.2s ease-in-out;
+
     /* Controla a animação dos botões de lembrança */
     --levitate-anim-button: levitate 1.5s ease-in-out infinite alternate;
 
@@ -123,5 +135,6 @@
     --border-spin-anim: borderSpin 3s linear infinite;
 
     /* Controla o crescimento do blur */
-    --blur-grow-anim: growBlur 5s ease-in-out;
+    --blur-grow-anim-w: growBlurW 5s ease-in-out; /* width > height */
+    --blur-grow-anim-h: growBlurH 5s ease-in-out; /* width < height */
 }

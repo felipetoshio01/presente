@@ -11,3 +11,13 @@
 @import url("./memories/active-memory.css");
 @import url("./memories/memory-btn.css");
 @import url("./memories/blur.css");
+
+
+main {
+    /* Centralizar os elementos */
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    min-height: 100vh;
+}
