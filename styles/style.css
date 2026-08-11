@@ -21,17 +21,79 @@
 
 /* ============ BODY ============ */
 body {
-    background-color: var(--bg-color-off);
-    color: var(--font-color-off);
-
     display: grid;
     grid-template-rows: auto 1fr auto;
 
     min-height: 100vh;
 
     font-family: var(--main-font);
+
+}
+
+
+/*
+0: delisgado
+1: mais clarinho 
+2: mais claro 2 (lembra de ajustar as fontes)
+3: insira o branquinho (partículas meio transparentes)
+4: mostre o leve azulado (partículas?)
+5: gradiente para cima
+*/
+
+
+/* Estágio inicial do site */
+.stage0 {
+    background-color: var(--bg-color-off);
+    color: var(--font-color-off);
+    
 }
 
 .stage1 {
     background-color: var(--bg-color-1);
+    color: var(--font-color-off);
+}
+
+.stage2 {
+    background-color: var(--bg-color-2);
+    color: var(--font-color-off);
+
+    --memory-title-color: #5a5a5a;
+    --memory-text-color: #585858;
+
+}
+
+.stage3 {
+    background-color: var(--bg-color-3);
+    color: var(--font-color-off);
+
+    --memory-title-color: #5a5a5a;
+    --memory-text-color: #585858;
+
+    --dialog-text-shadow: 0px 0px 6px var(--black);
+    --orb-shadow: 10px 10px 12px rgba(3, 3, 3, 0.2);
+}
+
+.stage4 {
+    background-color: var(--bg-color-4);
+    color: var(--font-color-off);
+
+    --memory-title-color: #7c7c7c;
+    --memory-text-color: #797979;
+
+    --dialog-text-shadow: 0px 0px 6px var(--black);
+    --orb-shadow: 10px 10px 12px rgba(3, 3, 3, 0.2);
+}
+
+.stage5 {
+    background-color: var(--bg-color-5);
+
+    background-image: linear-gradient(
+        to bottom,
+        var(--secondary-color),
+        var(--bg-color-5)
+    );
+
+    color: var(--font-color-off);
+    --dialog-text-shadow: 0px 0px 6px var(--black);
+    --orb-shadow: 10px 10px 12px rgba(3, 3, 3, 0.2);
 }

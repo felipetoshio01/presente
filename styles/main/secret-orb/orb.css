@@ -24,10 +24,11 @@
     background-color: var(--white);
     background-image: radial-gradient(circle at 30% 30%, var(--white), var(--black));
 
+    box-shadow: var(--orb-shadow);
+
     /* Para tornar um círculo */
     border-radius: 50%;
     aspect-ratio: 1 / 1;
-    /*width: clamp(7em, 60%, 17em);*/
 
     /* Animação de levitar (cima/baixo) */
     animation: var(--levitate-anim-secret);

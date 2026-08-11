@@ -27,7 +27,7 @@ button {
 
     font-size: 1em;
     font-weight: bold;
-    color: var(--dark-gray2);
+    color: var(--button-color);
 
     border: none;
     padding: 0.5em;

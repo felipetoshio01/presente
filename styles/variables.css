@@ -76,6 +76,11 @@
     --dark-gray1: #464646;
     --dark-gray2: #323232;
 
+    --primary-color: #81C0FF;
+    --secondary-color: #91AECC;
+    --tertiary-color: #192633;
+
+
     --transparent: #3434341a;
     --transparent-purple: #8869f04b;
 
@@ -98,8 +103,25 @@
     --font-color-off: var(--white);
     --line-color-off: #c8c8c8;
 
+    --memory-title-color: var(--dark-gray1);
+    --memory-text-color: var(--dark-gray2);
+
+    --button-color: var(--dark-gray2);
+    --dialog-color: var(--white);
+
+    --bg-color-1: #4e4e4e;
+    
+
+    --bg-color-2: #646363;
+    
+    --bg-color-3: #7a7a7a;
+    --bg-color-4: #a8a8a8;
+    --bg-color-5: #cfcfcf;
+
 
     /* ================ SOMBRAS ================ */
+
+    --orb-shadow: none;
 
     /* Sombra do texto dentro do orbe */
     --orb-text-shadow: 2px 2px 4px var(--black);

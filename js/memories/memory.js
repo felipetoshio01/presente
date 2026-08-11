@@ -71,7 +71,7 @@ function activateMemory(memory) {
 
 }
 
-/*
+
 // Muda o body
 function updateSite() {
     const body = document.body
@@ -81,8 +81,6 @@ function updateSite() {
     let oldStage = `stage${memoryCount - 1}`;
     let newStage = `stage${memoryCount}`;
 
-    if (!body.classList.replace(oldStage, newStage)) {
-        body.classList.add("stage1");
-    }
+    body.classList.replace(oldStage, newStage);
+
 }
-*/

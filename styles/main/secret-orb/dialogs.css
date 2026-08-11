@@ -4,6 +4,7 @@
     text-shadow: var(--dialog-text-shadow);
     text-align: center;
     font-size: 1em;
+    color: var(--dialog-color);
 
     /* Para fazer o efeito de fade out */
     transition: opacity 2s ease-in-out;

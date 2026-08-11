@@ -58,7 +58,7 @@
     padding: 0.25em;
     border-radius: 1em;
 
-    color: var(--dark-gray1);
+    color: var(--memory-title-color);
     font-size: 2.5em;
 }
 
@@ -73,5 +73,5 @@
 .memoryText p {
     line-height: 1.5em;
     margin-bottom: 0.75em;
-    color: var(--dark-gray2);
+    color: var(--memory-text-color);
 }
