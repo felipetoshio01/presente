@@ -16,14 +16,10 @@
     filter: blur(2em);
     aspect-ratio: 1 / 1;
 
-    
-
     background-color: var(--white);
 
     /* Em cima de tudo */
     z-index: 10;
-    
-    
 
     /* Efeito de fade out */
     transition: opacity 4s ease-in-out;

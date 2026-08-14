@@ -1,5 +1,7 @@
 // ================= ELEMENTOS =================
+const body = document.body
 const memoryArea = document.getElementById("memoryArea");  // Local onde estão as memórias
+const alert = document.getElementById("alert");
 
 let isActivating = false;
 let memoryCount = 0;
@@ -17,7 +19,7 @@ memoryArea.addEventListener("click", event => {
     let memory = event.target.parentElement;
 
     // Ativa a memóra
-    activateMemory(memory)
+    activateMemory(memory);
 
     // Aplica o blur
     blurScreen();
@@ -49,7 +51,7 @@ function blurScreen() {
 
         // Após o fadeOut (4 segundos)
         setTimeout(() => {
-            blurDiv.remove()
+            blurDiv.remove();
         }, 4000);
     });
 }
@@ -74,8 +76,6 @@ function activateMemory(memory) {
 
 // Muda o body
 function updateSite() {
-    const body = document.body
-
     memoryCount++;
 
     let oldStage = `stage${memoryCount - 1}`;
@@ -83,4 +83,18 @@ function updateSite() {
 
     body.classList.replace(oldStage, newStage);
 
+    if (memoryCount == 5) {
+        setTimeout( () => {showAlert();}, 4000);
+    }
+}
+
+function showAlert() {
+    console.log("oi");
+    
+    alert.classList.add("show");
+
+    setTimeout( () => {
+        alert.classList.remove("show");
+
+    }, 8000);
 }
