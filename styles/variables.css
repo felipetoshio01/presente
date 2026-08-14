@@ -10,6 +10,17 @@
     }  
 }
 
+/* Rotacção dos anéis ao redor do orbe */
+@keyframes ringRotation {
+    from {
+        rotate: 0;
+    }
+    
+    to {
+        rotate: 360deg;
+    }
+}
+
 /* Screen Shake: faz a leta tremer */
 @keyframes shake {
     0%, 100% {
@@ -43,7 +54,7 @@
     }
 
     to {
-        width: 150vw;
+        width: 200vw;
     }
 }
 
@@ -54,7 +65,7 @@
     }
 
     to {
-        height: 150vh;
+        height: 200vh;
     }
 }
 
@@ -78,8 +89,12 @@
 
     --primary-color: #81C0FF;
     --secondary-color: #91AECC;
+    --secondary-dark-color: #345b85;
     --tertiary-color: #192633;
 
+    --ring-color-1: #FFB0C5;
+    --ring-color-2: #F27798;
+    --ring-color-3: #FFE3EA;
 
     --transparent: #3434341a;
     --transparent-purple: #8869f04b;
@@ -110,10 +125,7 @@
     --dialog-color: var(--white);
 
     --bg-color-1: #4e4e4e;
-    
-
     --bg-color-2: #646363;
-    
     --bg-color-3: #7a7a7a;
     --bg-color-4: #a8a8a8;
     --bg-color-5: #cfcfcf;
@@ -159,4 +171,9 @@
     /* Controla o crescimento do blur */
     --blur-grow-anim-w: growBlurW 5s ease-in-out; /* width > height */
     --blur-grow-anim-h: growBlurH 5s ease-in-out; /* width < height */
+
+    /* Diferentes rotações dos anéis */
+    --ring-anim-1: ringRotation 6s linear infinite;
+    --ring-anim-2: ringRotation 4s linear infinite reverse;
+    --ring-anim-3: ringRotation 10s linear infinite;
 }

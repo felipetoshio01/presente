@@ -2,9 +2,14 @@
 
 /* Container geral */
 #finalSecretWrapper {
-    margin: 12em 0;
-    width: clamp(7em, 60%, 17em);
-    
+    margin: 12em auto;
+    width: clamp(7em, 60%, 19em); 
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "orb"
+        "dialog";
 }
 
 .shake {
@@ -13,7 +18,11 @@
 
 /* O orbe em si */
 #finalSecret {
+    grid-area: orb;
+
     margin: 4em auto;
+
+    width: 80%;
 
     /* Centralizar */
     display: flex;

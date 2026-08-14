@@ -1,6 +1,8 @@
 /* ============ TEXTOS DO ORBE ============ */
 
 #secretDialog {
+    grid-area: dialog;
+
     text-shadow: var(--dialog-text-shadow);
     text-align: center;
     font-size: 1em;

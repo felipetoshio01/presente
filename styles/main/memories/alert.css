@@ -1,32 +1,50 @@
+/* ============ ALERTA PARA SUBIR ============ */
 
 #alert {
+    /* Para centralizar os componentes do alerta */
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
+
+    /* Fixo na tela */
     position: fixed;
+
+    /* Exatas dimensões */
     width: max-content;
     height: max-content;
     
-    justify-items: center;
-    
+    /* Levemente para cima para esconder o ponta do triângulo */
     top: -5px;
-    left: 50%;
-    translate: -50%;
 
+    /* Esconde da tela */
     transform: translateY(-100%);
     
     transition: transform 2s ease-in-out;
 
+    /* Acima dos textos */
     z-index: 2;
 }
 
+/* Coloca na posição normal */
+#alert.show {
+    transform: translateY(0);
+}
+
+/* Triângulo do topo */
 #alert-top {
+    /* Só a borda aparece */
     width: 0;
     height: 0;
+
+    /* Cancela os dois lados */
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
+
+    /* Forma a base do triângulo */
     border-bottom: 20px solid var(--white);
 }
 
+/* Campo da mensagem */
 #alert-message {
     border-radius: 10px;
     background-color: var(--white);
@@ -34,15 +52,12 @@
     width: max-content;
     height: max-content;
 
-    padding: 0.75em;
+    padding: 1em;
 }
 
+/* Texto dentro da mensagem */
 #alert-message h2 {
     color: var(--tertiary-color);
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: normal;
-}
-
-#alert.show {
-    transform: translateY(0);
 }

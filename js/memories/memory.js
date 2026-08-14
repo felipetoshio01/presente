@@ -1,7 +1,8 @@
 // ================= ELEMENTOS =================
 const body = document.body
 const memoryArea = document.getElementById("memoryArea");  // Local onde estão as memórias
-const alert = document.getElementById("alert");
+const alert = document.getElementById("alert");  // alerta para subir
+const ring = document.getElementById("ringWrapper");  // anéis
 
 let isActivating = false;
 let memoryCount = 0;
@@ -83,18 +84,26 @@ function updateSite() {
 
     body.classList.replace(oldStage, newStage);
 
+    // Se está no último estágio, ative a mensagem e o anel
     if (memoryCount == 5) {
+        activateRing();
+
+        // Um delay para ser mais fácil de ler
         setTimeout( () => {showAlert();}, 4000);
     }
 }
 
+// Faz surgir a mensagem
 function showAlert() {
-    console.log("oi");
-    
     alert.classList.add("show");
 
     setTimeout( () => {
         alert.classList.remove("show");
 
-    }, 8000);
+    }, 10000);
+}
+
+// Coloca os anéis no orbe
+function activateRing() {
+    ring.style.display = "grid";
 }

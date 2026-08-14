@@ -87,7 +87,7 @@ body {
 
     background-image: linear-gradient(
         to bottom,
-        var(--secondary-color),
+        var(--secondary-dark-color),
         var(--bg-color-5)
     );
 

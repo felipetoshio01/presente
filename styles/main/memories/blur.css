@@ -27,7 +27,7 @@
 
 .wideBlur {
     /* Cobrir toda tela toda*/
-    width: 150vw;
+    width: 200vw;
 
     /* Animação para crescer */
     animation: var(--blur-grow-anim-w);
@@ -35,7 +35,7 @@
 
 .longBlur {
     /* Cobrir toda tela toda*/
-    height: 150vh;
+    height: 200vh;
 
     /* Animação para crescer */
     animation: var(--blur-grow-anim-h);
