@@ -34,18 +34,17 @@ function openOrb() {
         element.remove()
     });
 
-    let heart = document.createElement("div");
-    heart.id = "heart";
-
-    let message = document.createElement("h2");
-    message.id = "heartMessage";
-    message.textContent = "Feliz aniversário";
-
     finalSecretWrapper.innerHTML = `
         <div id="heartWrapper">
+            <div id="beatWrapper">
+                <div class="beat"></div>
+                <div class="beat"></div>
+                <div class="beat"></div>
+            </div>
+
             <div id="heart"></div>
         </div>
         
-        <h2 id="heartMessage">Feliz aniversário</h2>
+        <h2 id="heartMessage">Feliz aniversário amor!</h2>
     `
 }

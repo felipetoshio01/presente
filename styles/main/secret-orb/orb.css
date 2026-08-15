@@ -6,7 +6,8 @@
 
     margin-top: 20em;
 
-    width: clamp(8em, 70%, 19em); 
+    width: clamp(8em, 70%, 19em);
+    
     display: grid;
     align-items: center;
     grid-template-columns: 1fr;

@@ -2,7 +2,7 @@
 
 /* Fontes */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 /* Módulos */
 @import url("./variables.css");
@@ -23,6 +23,9 @@ body {
     grid-template-rows: auto 1fr auto;
 
     min-height: 100vh;
+    max-width: 100vw;
+
+    overflow-x: hidden;
 
     font-family: var(--main-font);
 

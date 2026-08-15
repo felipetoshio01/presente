@@ -1,6 +1,11 @@
 /* ============ CORAÇÃO FINAL ============ */
 
+/* ORGANIZE AMANHA ESSE CODIGO!!!!!!!!!!!! */
 #heartWrapper {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
     animation: var(--levitate-anim-secret);
 }
 
@@ -9,7 +14,7 @@
     position: relative;
     margin: auto;
     
-    width: 80%;
+    width: 50%;
 
     aspect-ratio: 1 / 1;
 
@@ -35,8 +40,50 @@
 
 #heart::after {top: -50%;}
 
+#beatWrapper {
+    display: grid;
+    grid-template-areas: "stack";
+
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    transform: translateY(-30px);
+}
+
+.beat {
+    grid-area: stack;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: transparent;
+
+    border: 0.5em solid red;
+    border-radius: 50%;
+
+    opacity: 0;
+
+    animation: beat 5.4s linear infinite;
+}
+
+.beat:nth-child(1) {
+    border-color: var(--ring-color-3);
+}
+
+.beat:nth-child(2) {
+    animation-delay: 1.8s;
+    border-color: var(--ring-color-1);
+}
+
+.beat:nth-child(3) {
+    animation-delay: 3.6s;
+    border-color: var(--ring-color-2);
+}
+
 #heartMessage {
-    margin-top: 3em;
+    margin-top: 2em;
+    font-size: 2.2em;
+    font-family: var(--love-font);
     text-align: center;
     animation: var(--levitate-anim-secret);
 }
@@ -45,3 +92,15 @@
     grid-template-areas: none;
 }
 
+
+@keyframes beat {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
