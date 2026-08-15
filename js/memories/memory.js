@@ -29,6 +29,7 @@ memoryArea.addEventListener("click", event => {
     event.target.remove();
 });
 
+// Cria o blur na screen
 function blurScreen() {
     // div que fará o efeito do blur
     const blurDiv = document.createElement("div");
@@ -73,7 +74,6 @@ function activateMemory(memory) {
     }, 4000);
 
 }
-
 
 // Muda o body
 function updateSite() {

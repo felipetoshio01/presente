@@ -2,8 +2,11 @@
 
 /* Container geral */
 #finalSecretWrapper {
-    margin: 12em auto;
-    width: clamp(7em, 60%, 19em); 
+    margin: 10em auto;
+
+    margin-top: 20em;
+
+    width: clamp(8em, 70%, 19em); 
     display: grid;
     align-items: center;
     grid-template-columns: 1fr;

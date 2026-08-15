@@ -1,0 +1,47 @@
+/* ============ CORAÇÃO FINAL ============ */
+
+#heartWrapper {
+    animation: var(--levitate-anim-secret);
+}
+
+#heart {
+    rotate: 45deg;
+    position: relative;
+    margin: auto;
+    
+    width: 80%;
+
+    aspect-ratio: 1 / 1;
+
+    background-color: var(--heart-color);
+
+    filter: drop-shadow(0 0 20px var(--heart-color));
+
+}
+
+#heart::before, #heart::after {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    background-color: var(--heart-color);
+    border-radius: 50%;
+}
+
+#heart::before {left: -50%;}
+
+#heart::after {top: -50%;}
+
+#heartMessage {
+    margin-top: 3em;
+    text-align: center;
+    animation: var(--levitate-anim-secret);
+}
+
+#finalSecret:has(#heart) {
+    grid-template-areas: none;
+}
+

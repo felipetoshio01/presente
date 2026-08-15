@@ -19,7 +19,7 @@ const dialogs = [
 ]
 
 // Looping da mensagem abaixo do finalSecret
-setInterval(() => {
+export const dialogChange = setInterval(() => {
 
     // Ativa a animação
     secretDialog.classList.add("fadeOut");
