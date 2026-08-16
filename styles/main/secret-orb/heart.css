@@ -1,7 +1,9 @@
 /* ============ CORAÇÃO FINAL ============ */
 
 /* ORGANIZE AMANHA ESSE CODIGO!!!!!!!!!!!! */
+/* Container com o coração e os anéis */
 #heartWrapper {
+    /* Centralizar */
     display: grid;
     align-items: center;
     justify-items: center;
@@ -9,98 +11,116 @@
     animation: var(--levitate-anim-secret);
 }
 
+/* Coração em si */
 #heart {
+    /* Fazer o efeito de coração */
     rotate: 45deg;
-    position: relative;
-    margin: auto;
-    
-    width: 50%;
 
+    position: relative;
+
+    /* Arredondado na ponta */
+    border-radius: 5%;
+    
+    /* Quadrado */
+    width: 60%;
     aspect-ratio: 1 / 1;
 
     background-color: var(--heart-color);
 
+    /* Uma sensação de brilho */
     filter: drop-shadow(0 0 20px var(--heart-color));
-
 }
 
+/* Os "círculos" das pontas de cima */
 #heart::before, #heart::after {
     content: "";
     position: absolute;
 
+    /* 100% do tamamho do pai */
     width: 100%;
-
     aspect-ratio: 1 / 1;
 
     background-color: var(--heart-color);
+
+    /* Redondo */
     border-radius: 50%;
 }
 
+/* Deixar eles nas posições certas */
 #heart::before {left: -50%;}
 
 #heart::after {top: -50%;}
 
+/* Vai conter os anéis de batimento */
 #beatWrapper {
+    /* Centralizar os dois anéis */
     display: grid;
     grid-template-areas: "stack";
 
+    /* Não atrapalhas os outros itens */
     position: absolute;
+
+    /* Container quadrado */
     width: 100%;
     aspect-ratio: 1 / 1;
 
+    /* Ajustar o centro */
     transform: translateY(-30px);
 }
 
+/* Cada anel de batimento */
 .beat {
+    /* Um em cima do outro */
     grid-area: stack;
 
+    /* Circular */
     width: 100%;
     aspect-ratio: 1 / 1;
-    background-color: transparent;
-
-    border: 0.5em solid red;
     border-radius: 50%;
 
+    /* Só aparecer a borda */
+    background-color: transparent;
+
+    border: 0.5em solid;
+    
+    /* Invisível até a animação começar */
     opacity: 0;
 
-    animation: beat 5.4s linear infinite;
+    animation: var(--beat-anim);
 }
 
 .beat:nth-child(1) {
-    border-color: var(--ring-color-3);
+    border-color: var(--beat-color-1);
+    filter: drop-shadow(0 0 20px var(--beat-color-1));
 }
 
 .beat:nth-child(2) {
     animation-delay: 1.8s;
-    border-color: var(--ring-color-1);
+    border-color: var(--beat-color-2);
+    filter: drop-shadow(0 0 20px var(--beat-color-2));
 }
 
 .beat:nth-child(3) {
     animation-delay: 3.6s;
-    border-color: var(--ring-color-2);
+    border-color: var(--beat-color-3);
+    filter: drop-shadow(0 0 20px var(--beat-color-3));
 }
 
+
+/* Texto logo abaixo do coração */
 #heartMessage {
+    /* Espaçamento do coração */
     margin-top: 2em;
+
     font-size: 2.2em;
     font-family: var(--love-font);
     text-align: center;
+    text-shadow: var(--love-text-shadow);
+
     animation: var(--levitate-anim-secret);
 }
 
+/* Retira todos os grid-areas anteriores */
 #finalSecret:has(#heart) {
     grid-template-areas: none;
-}
-
-
-@keyframes beat {
-    from {
-        transform: scale(0);
-        opacity: 1;
-    }
-
-    to {
-        transform: scale(1.5);
-        opacity: 0;
-    }
 }

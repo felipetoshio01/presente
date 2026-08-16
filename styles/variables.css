@@ -69,6 +69,19 @@
     }
 }
 
+/* Anéis ao redor do coração */
+@keyframes beat {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
 /* ================ PROPERTIES ================ */
 @property --angle {
     syntax: "<angle>";
@@ -96,6 +109,10 @@
     --ring-color-1: #FFB0C5;
     --ring-color-2: #F27798;
     --ring-color-3: #FFE3EA;
+
+    --beat-color-1: #ffc8d6;
+    --beat-color-2: #fd85a5;
+    --beat-color-3: #ff4f75;
 
     --heart-color: #ec4048;
 
@@ -153,6 +170,9 @@
     /* Sombra dos textos das memórias */
     --memory-text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
 
+    /* Sombra do "FELIZ ANIVERSÁRIO!" */
+    --love-text-shadow: 0 0 10px #ff4f75;
+
     /* Sombra dos botões */
     --button-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
 
@@ -179,4 +199,6 @@
     --ring-anim-1: ringRotation 6s linear infinite;
     --ring-anim-2: ringRotation 4s linear infinite reverse;
     --ring-anim-3: ringRotation 10s linear infinite;
+
+    --beat-anim: beat 5.4s linear infinite;
 }
