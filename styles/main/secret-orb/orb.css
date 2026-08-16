@@ -4,8 +4,6 @@
 #finalSecretWrapper {
     margin: 10em auto;
 
-    margin-top: 20em;
-
     width: clamp(8em, 70%, 19em);
     
     display: grid;

@@ -59,11 +59,19 @@
     background-size: cover;
 }
 
+.memory.activeMemory#star-memory .memoryTitle {
+    text-shadow: var(--star-text-shadow);
+}
+
 /* ------ Sol ------ */
 .memory.activeMemory#sun-memory {
     /* Imagem de fundo */
     background: var(--black) url(../../../images/sunset.jpg) left bottom no-repeat fixed;
     background-size: cover;
+}
+
+.memory.activeMemory#sun-memory .memoryTitle {
+    text-shadow: var(--sun-text-shadow);
 }
 
 /* ------ Campo ------ */
@@ -75,7 +83,7 @@
 
 .memory.activeMemory#field-memory .memoryTitle {
     /* Sombra para deixar mais visível */
-    text-shadow: var(--memory-text-shadow);
+    text-shadow: var(--field-text-shadow);
 }
 
 
@@ -86,10 +94,18 @@
     background-size: cover;
 }
 
+.memory.activeMemory#golden-memory .memoryTitle {
+    text-shadow: var(--golden-text-shadow);
+}
+
 
 /* ------ Mar ------ */
 .memory.activeMemory#sea-memory {
     /* Imagem de fundo */
     background: var(--black) url(../../../images/sea.jpg) center top no-repeat fixed;
     background-size: cover;
+}
+
+.memory.activeMemory#sea-memory .memoryTitle {
+    text-shadow: var(--sea-text-shadow);
 }

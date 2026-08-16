@@ -117,7 +117,6 @@
     --heart-color: #ec4048;
 
     --transparent: #3434341a;
-    --transparent-purple: #8869f04b;
 
     --star-primary-color: #8969F0;
     --star-secondary-color: #3F3264;
@@ -169,6 +168,13 @@
 
     /* Sombra dos textos das memórias */
     --memory-text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+
+    /* Sobra dos títulos de cada memória */
+    --star-text-shadow: 0 0 4px #8869f0;
+    --sun-text-shadow: 0 0 4px #ffba6b67;
+    --field-text-shadow: 2px 2px 8px #083d0c;
+    --golden-text-shadow: 0 0 4px #bbb957;
+    --sea-text-shadow: 0 0 4px #bd5a73;
 
     /* Sombra do "FELIZ ANIVERSÁRIO!" */
     --love-text-shadow: 0 0 10px #ff4f75;

@@ -1,12 +1,13 @@
 /* ============ CORAÇÃO FINAL ============ */
 
-/* ORGANIZE AMANHA ESSE CODIGO!!!!!!!!!!!! */
 /* Container com o coração e os anéis */
 #heartWrapper {
     /* Centralizar */
     display: grid;
     align-items: center;
     justify-items: center;
+
+    margin-top: 7em;
 
     animation: var(--levitate-anim-secret);
 }
