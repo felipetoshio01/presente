@@ -1,3 +1,5 @@
+import * as Text from "./texts.js";
+
 // ================= ELEMENTOS =================
 const body = document.body
 const memoryArea = document.getElementById("memoryArea");  // Local onde estão as memórias
@@ -6,6 +8,7 @@ const ring = document.getElementById("ringWrapper");  // anéis
 
 let isActivating = false;
 let memoryCount = 0;
+
 
 // Ativação das memórias
 memoryArea.addEventListener("click", event => {
@@ -19,7 +22,7 @@ memoryArea.addEventListener("click", event => {
     // Captura a instância da memória do botão
     let memory = event.target.parentElement;
 
-    // Ativa a memóra
+    // Ativa a memória
     activateMemory(memory);
 
     // Aplica o blur
@@ -28,6 +31,7 @@ memoryArea.addEventListener("click", event => {
     // Retira o botão
     event.target.remove();
 });
+
 
 // Cria o blur na screen
 function blurScreen() {
@@ -58,8 +62,11 @@ function blurScreen() {
     });
 }
 
+
 // Ativa a memória
 function activateMemory(memory) {
+    let memoryText = memory.children[0].children[1];
+    
     isActivating = true;
 
      // Após 4 segundos (animação termina)
@@ -67,12 +74,39 @@ function activateMemory(memory) {
         // Ativa a memória
         memory.classList.add("activeMemory");
 
+        addMemoryText(memory.id, memoryText);
+
         updateSite();
 
         isActivating = false;
 
     }, 4000);
 
+}
+
+
+function addMemoryText(memoryId, memoryText) {
+    switch(memoryId) {
+        case "star-memory":
+            memoryText.innerHTML = Text.STAR_MEMORY_CONTENT;
+            break;
+        
+        case "sun-memory":
+            memoryText.innerHTML = Text.SUN_MEMORY_CONTENT;
+            break;
+
+        case "field-memory":
+            memoryText.innerHTML = Text.FIELD_MEMORY_CONTENT;
+            break;
+
+        case "golden-memory":
+            memoryText.innerHTML = Text.GOLDEN_MEMORY_CONTENT;
+            break;
+        
+        case "sea-memory":
+            memoryText.innerHTML = Text.SEA_MEMORY_CONTENT;
+            break;
+    }
 }
 
 // Muda o body

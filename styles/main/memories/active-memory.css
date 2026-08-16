@@ -37,7 +37,7 @@
 /* CONTAINER TEXTO: quando ativo */
 .memory.activeMemory .memoryText {
     /* Facilitar ler os textos brancos */
-    background-color: rgba(52, 52, 52, 0.4);
+    background-color: rgba(52, 52, 52, 0.6);
     backdrop-filter: blur(0.2em);
     box-shadow: var(--transparent-shadow);
 }
